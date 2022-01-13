@@ -28,6 +28,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['turalhasanovportfolio.herokuapp.com','127.0.0.1']
 
+APP_NAME = 'TuralHasanovPortfolio'
 
 # Application definition
 
