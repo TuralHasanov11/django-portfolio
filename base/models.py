@@ -38,6 +38,8 @@ class Project(models.Model):
     image = models.URLField(null=True, blank=True)
     video = models.URLField(null=True, blank=True)
     technologies = models.ManyToManyField(Skill, through='ProjectTechnology')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name
