@@ -1,0 +1,23 @@
+<header class="s-header">
+
+    <div class="header-mobile">
+        <span class="mobile-home-link"><a href="{% url 'base' %}">Tural Hasanov</a></span>
+        <a class="mobile-menu-toggle" href="#0"><span>Menu</span></a>
+    </div>
+
+    <div class="row wide main-nav-wrap">
+        <nav class="column lg-12 main-nav">
+            <ul>
+                <li><a href="{% url 'base' %}" class="home-link">Tural Hasanov</a></li>
+                <li class="current"><a href="#intro" class="smoothscroll">Intro</a></li>
+                <li><a href="#about" class="smoothscroll">About</a></li>
+                <li><a href="#projects" class="smoothscroll">Projects</a></li>
+                <li><a href="#contact" class="smoothscroll">Contact me</a></li>
+                {% if request.user.is_authenticated and request.user.is_superuser %}
+                <li><a href="/admin">Admin</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+
+</header> 

@@ -1,0 +1,22 @@
+{% extends 'app.html' %}
+{% load static %}
+
+{% block content %}
+<!-- ## main content
+        ==================================================- -->
+        <main class="s-content">
+
+
+            {% include 'base/intro.html' %}
+
+            
+            {% include 'base/about.html' with experiences=experiences skill=skill %}
+
+
+            {% include 'base/projects.html' with projects=projects %}
+
+
+            {% include 'base/contact.html' %}
+
+        </main> <!-- end s-content -->
+{% endblock %}

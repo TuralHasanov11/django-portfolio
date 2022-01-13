@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js ss-preload" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="{% static 'css/vendor.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'apple-touch-icon.png'%}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon-32x32.png'%}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon-16x16.png'%}">
+    <link rel="manifest" href="{% static 'site.webmanifest' %}">
+    
+</head>
+<body id="top">
+
+    <div id="preloader">
+        <div id="loader">
+        </div>
+    </div>
+
+
+    <div class="s-pagewrap">
+
+        <div class="circles">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        {% include 'inc/header.html'%}
+
+        {% block content %}
+
+
+        {% endblock content %}
+
+        {% include 'inc/footer.html'%}
+
+    </div>
+    
+
+    <script src="{% static 'js/plugins.js'%}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+{% load static %}
+<section id="about" class="s-about target-section">
+
+
+    <div class="row about-info wide" data-animate-block>
+
+        <!-- <div class="column lg-6 md-12 about-info__pic-block">
+            <img src="{% static 'images/about-photo.jpg' %}" 
+                    srcset="{% static 'images/about-photo.jpg' %} 1x, images/about-photo@2x.jpg 2x" alt="" class="about-info__pic" data-animate-el>
+        </div> -->
+
+        <div class="column">
+            <div class="about-info__text" >
+
+                <h2 class="text-pretitle with-line" data-animate-el>
+                    About
+                </h2>
+                <p class="attention-getter" data-animate-el>
+                    Extremely motivated to constantly develop my skills and grow professionally. 
+                    I have been learning programming for a couple of years, I've never stopped engaging my passion to help others and solve problems. 
+                    As a web developer, I enjoy using my obsessive attention to detail, my unequivocal love for making things, 
+                    and my mission-driven work ethic to literally change the world. 
+                </p>
+                <a href="{% url 'download_cv' %}" class="btn btn--medium u-fullwidth" data-animate-el>Download CV</a>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row about-expertise" data-animate-block>
+        <div class="column lg-12">
+
+            <h2 class="text-pretitle" data-animate-el>Expertise</h2>
+
+            <ul class="skills-list h3" data-animate-el>
+                {% for skill in skills %}
+                <li>{{skill}} <i class="{{skill.icon}}"></i> </li>
+                {% endfor %}
+            </ul>
+
+        </div>
+    </div>
+
+
+    <div class="row about-timelines" data-animate-block>
+
+        <div class="column lg-6 tab-12">
+
+            <h2 class="text-pretitle" data-animate-el>
+                Experience
+            </h2>
+
+            <div class="timeline" data-animate-el>
+
+               {% for exp in experience %}
+                <div class="timeline__block">
+                    <div class="timeline__bullet"></div>
+                    <div class="timeline__header">
+                        <h4 class="timeline__title">{{exp.company}}</h3>
+                        <h5 class="timeline__meta">{{exp.position}}</h5>
+                        <p class="timeline__timeframe">{{exp.date_from|date:'F Y'}} - {{exp.date_to|date:'F Y'}}</p>
+                    </div>
+                    <div class="timeline__desc">
+                        <p>{{exp.text}}</p>
+                    </div>
+                </div>
+               {% endfor %}
+
+            </div>
+
+        </div>
+
+        <div class="column lg-6 tab-12">
+
+            <h2 class="text-pretitle" data-animate-el>
+                Education
+            </h2>
+
+            <div class="timeline" data-animate-el>
+
+                {% for edu in education %}
+                <div class="timeline__block">
+                    <div class="timeline__bullet"></div>
+                    <div class="timeline__header">
+                        <h4 class="timeline__title">{{edu.place}}</h3>
+                        <h5 class="timeline__meta">{{edu.title}}</h5>
+                        <p class="timeline__timeframe">{{edu.dateFrom}} - {{edu.dateTo}}</p>
+                    </div>
+                    <div class="timeline__desc">
+                        <p>{{edu.text}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+            
+        </div>
+
+
+    </div>
+
+</section>
