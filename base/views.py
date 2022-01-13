@@ -25,7 +25,7 @@ education = [
         'title':'Web Development Student',
         'dateFrom':'February 2019',
         'dateTo':'August 2019',
-        'text':'I took a 7-month full-stack web development course in Orient ITM training center. I was taught HTML5, CSS3, Vanilla Javascript, JQuery & Ajax for front-end programming, PHP for back-end, MySQL for database programming'
+        'text':'I took a 7-month full-stack web development course in Orient ITM training center. I was taught HTML5, CSS3, JavaScript, JQuery & Ajax for front-end programming, PHP for back-end, MySQL for database programming'
     }
 ]
 
@@ -33,7 +33,7 @@ def base(request):
 
     skills = Skill.objects.all()
     experience = Experience.objects.all()
-    projects = Project.objects.all().prefetch_related('technologies')
+    projects = Project.objects.order_by('-created_at').all().prefetch_related('technologies')
 
     return render(request, 'base/base.html',context={
         'skills':skills,
