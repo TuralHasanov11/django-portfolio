@@ -3701,6 +3701,7 @@ img.u-pull-left {
  * ------------------------------------------------------------------- */
 .modal-popup {
   max-width: 720px;
+  max-height: 600px;
   background-color: white;
   font-size: calc(var(--text-size) * 0.9447);
   line-height: var(--vspace-0_875);
@@ -3711,19 +3712,22 @@ img.u-pull-left {
 
 @media screen and (max-width: 992px) {
   .modal-popup {
-    max-width: 580px;
+    max-width: 560px;
+    max-height: 480px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .modal-popup {
     max-width: 480px;
+    max-height: 400px;
   }
 }
 
 @media screen and (max-width: 576px) {
   .modal-popup {
-    max-width: 320px;
+    max-width: 400px;
+    max-height: 320px;
   }
 }
 
